@@ -12,9 +12,9 @@ chat:
       v: 1
       v1: 1
   welcome_message:
-    - ""
-    - ""
-    - ""
+    - "---"
+    - "sas"
+    - "---"
   coords_format:
     - "%player%&7:"
     - "&eX&7: &b%x%"
