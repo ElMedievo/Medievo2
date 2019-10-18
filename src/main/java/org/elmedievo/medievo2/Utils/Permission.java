@@ -8,7 +8,8 @@ public enum Permission {
     CHAT_REPLY("medievo2.chat.reply", "Allows permission to reply the last private message received."),
     CHAT_BROADCAST("medievo2.core.broadcast", "Allows access to broadcast messages."),
     RANK("medievo2.rank", "Rank command node permission."),
-    RANK_ADD("medievo.rank.add", "Allows permission to add ranks to players.");
+    RANK_ADD("medievo.rank.add", "Allows permission to add ranks to players."),
+    RANK_REMOVE("medievo.rank.add", "Allows permission to remove ranks from players.");
 
     private String node;
     private String description;

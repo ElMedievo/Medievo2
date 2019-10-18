@@ -22,7 +22,7 @@ public class RankCommand {
             min = 2,
             max = 2
     )
-    @CommandPermissions("medievo2.ranks.add")
+    @CommandPermissions("medievo2.rank.add")
     public static void add(final CommandContext args, final CommandSender sender) throws CommandException, RankDatabaseException {
         String playerName = args.getString(0);
         String rankName = args.getString(1);
@@ -53,7 +53,7 @@ public class RankCommand {
             min = 2,
             max = 2
     )
-    @CommandPermissions("medievo2.ranks.remove")
+    @CommandPermissions("medievo2.rank.remove")
     public static void remove(final CommandContext args, final CommandSender sender) throws CommandException, RankDatabaseException {
         String playerName = args.getString(0);
         String rankName = args.getString(1);
@@ -82,7 +82,7 @@ public class RankCommand {
                 aliases = {"rank"},
                 desc = "Ranks node command."
         )
-        @CommandPermissions("medievo2.ranks")
+        @CommandPermissions("medievo2.rank")
         @NestedCommand(RankCommand.class)
         public static void rank(final CommandContext args, final CommandSender sender) throws CommandException {
         }
