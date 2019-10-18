@@ -18,7 +18,8 @@ public enum ChatConstant {
     RANK_GIVEN("Rank successfully added to "),
     RANK_REMOVED("Rank successfully removed."),
     RANK_RECEIVED("You have been promoted by "),
-    RANK_TAKEN("You have been demoted by ");
+    RANK_TAKEN("You have been demoted by "),
+    RANKS_RELOADED("Ranks successfully reloaded.");
 
     private String message;
 

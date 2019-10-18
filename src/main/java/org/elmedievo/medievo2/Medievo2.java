@@ -96,6 +96,8 @@ public final class Medievo2 extends JavaPlugin {
         commandRegistry.register(BroadcastCommand.class);
         commandRegistry.register(RankCommand.RankParentcommand.class);
         commandRegistry.register(RankCommand.class);
+        commandRegistry.register(RanksCommand.RanksParentCommand.class);
+        commandRegistry.register(RanksCommand.class);
     }
 
     private void registerEvents() {

@@ -47,6 +47,11 @@ public class RankRegistry {
         loadRankModels();
     }
 
+    public void reload() {
+        ranks.clear();
+        load();
+    }
+
     private void loadRankModels() {
         Element root = ranksXML.getRootElement();
         root.getChildren("rank").forEach(rankModule -> {
