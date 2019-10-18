@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ranks>
+    <rank name="Default" flair="$e" priority="1000"/>
+</ranks>

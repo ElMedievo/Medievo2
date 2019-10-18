@@ -1,0 +1,24 @@
+chat:
+  format: "&r%channel_prefix%&r<%player%&r>: %msg%"
+  broadcast_format: "&c[Broadcast] "
+  join_format: "%player% &a&lhas joined the server!"
+  leave_format: "%player% &c&lhas left the server!"
+  pm:
+    prefix: '&f[&6PM&f]'
+    from_format: '%pm_prefix% &7From&r %player%&7:&r %msg%'
+    to_format: '%pm_prefix% &7To&r %player%&7:&r %msg%'
+    sound:
+      effect: ENTITY_ITEM_PICKUP
+      v: 1
+      v1: 1
+  welcome_message:
+    - ""
+    - ""
+    - ""
+  coords_format:
+    - "%player%&7:"
+    - "&eX&7: &b%x%"
+    - "&eY&7: &b%y%"
+    - "&eZ&7: &b%z%"
+world:
+  weather: false

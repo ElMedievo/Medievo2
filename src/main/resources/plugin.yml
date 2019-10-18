@@ -1,0 +1,8 @@
+name: Medievo2
+version: ${project.version}
+main: org.elmedievo.medievo2.Medievo2
+api-version: '1.13'
+prefix: Medievo
+authors: [BGem, BGMP]
+description: Medievo Project re-write
+website: https://elmedievo.org/
