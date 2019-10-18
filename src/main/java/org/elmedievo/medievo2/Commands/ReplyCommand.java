@@ -37,9 +37,9 @@ public class ReplyCommand {
                     pm.send();
                 } else {
                     Medievo2.getReplyQueue.removePair(player);
-                    throw new CommandException(ChatConstant.PLAYER_IS_OFFLINE.formatAsException());
+                    sender.sendMessage(ChatConstant.PLAYER_IS_OFFLINE.formatAsException());
                 }
-            } else throw new CommandException(ChatConstant.NOBODY_TO_REPLY_TO.formatAsException());
-        } else throw new CommandException(ChatConstant.NO_CONSOLE.formatAsException());
+            } else sender.sendMessage(ChatConstant.NOBODY_TO_REPLY_TO.formatAsException());
+        } else sender.sendMessage(ChatConstant.NO_CONSOLE.formatAsException());
     }
 }

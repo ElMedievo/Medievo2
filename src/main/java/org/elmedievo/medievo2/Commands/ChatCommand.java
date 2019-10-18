@@ -32,7 +32,7 @@ public class ChatCommand {
                 if (Medievo2.getChannelRegistry.getPlayerChannel(player) != Channel.ADMIN) {
                     Medievo2.getChannelRegistry.setPlayerChannel(player, Channel.ADMIN);
                     player.sendMessage(ChatConstant.CHANNEL_SET_ADMIN.formatAsSuccess());
-                } sender.sendMessage(ChatConstant.CHANNEL_ALREADY_ADMIN.formatAsException());
+                } else sender.sendMessage(ChatConstant.CHANNEL_ALREADY_ADMIN.formatAsException());
             } else {
                 String[] arguments = args.getOriginalArgs();
                 Message.Text text = new Message.Text(buildMessageFromCommandArgs(arguments, 1));
