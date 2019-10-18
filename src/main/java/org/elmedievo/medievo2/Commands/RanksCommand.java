@@ -24,7 +24,7 @@ public class RanksCommand {
 
     @Command(
             aliases = {"list"},
-            desc = "Ranks node command."
+            desc = "Lists all existing ranks."
     )
     @CommandPermissions("medievo2.ranks.list")
     public static void list(final CommandContext args, final CommandSender sender) throws CommandException {
