@@ -23,6 +23,7 @@ public class RankCommand {
             max = 2
     )
     @CommandPermissions("medievo2.rank.add")
+    @SuppressWarnings("deprecation")
     public static void add(final CommandContext args, final CommandSender sender) throws CommandException, RankDatabaseException {
         String playerName = args.getString(0);
         String rankName = args.getString(1);
@@ -54,6 +55,7 @@ public class RankCommand {
             max = 2
     )
     @CommandPermissions("medievo2.rank.remove")
+    @SuppressWarnings("deprecation")
     public static void remove(final CommandContext args, final CommandSender sender) throws CommandException, RankDatabaseException {
         String playerName = args.getString(0);
         String rankName = args.getString(1);
@@ -77,7 +79,7 @@ public class RankCommand {
         if (player.isOnline()) player.sendMessage(ChatColor.RED + ChatConstant.RANK_TAKEN.getMessage() + senderName);
     }
 
-    public static class RankParentcommand {
+    public static class RankParentCommand {
         @Command(
                 aliases = {"rank"},
                 desc = "Ranks node command."

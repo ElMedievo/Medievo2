@@ -94,7 +94,7 @@ public final class Medievo2 extends JavaPlugin {
         commandRegistry.register(PrivateMessageCommand.class);
         commandRegistry.register(ReplyCommand.class);
         commandRegistry.register(BroadcastCommand.class);
-        commandRegistry.register(RankCommand.RankParentcommand.class);
+        commandRegistry.register(RankCommand.RankParentCommand.class);
         commandRegistry.register(RankCommand.class);
         commandRegistry.register(RanksCommand.RanksParentCommand.class);
         commandRegistry.register(RanksCommand.class);
