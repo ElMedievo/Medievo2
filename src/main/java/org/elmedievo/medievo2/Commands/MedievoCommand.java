@@ -23,6 +23,7 @@ public class MedievoCommand {
     public static void reload(final CommandContext args, final CommandSender sender) throws CommandException {
         Configuration configuration = Medievo2.getConfiguration;
         configuration.reload();
+        configuration.setConfigFile(Medievo2.getPlugin.getConfig());
 
         sender.sendMessage(ChatConstant.CONFIGURATION_RELOADED.formatAsSuccess());
     }
