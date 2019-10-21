@@ -8,8 +8,10 @@ public enum Permission {
     CHAT_REPLY("medievo2.chat.reply", "Allows permission to reply the last private message received."),
     CHAT_BROADCAST("medievo2.core.broadcast", "Allows access to broadcast messages."),
     RANK("medievo2.rank", "Rank command node permission."),
-    RANK_ADD("medievo.rank.add", "Allows permission to add ranks to players."),
-    RANK_REMOVE("medievo.rank.remove", "Allows permission to remove ranks from players.");
+    RANK_ADD("medievo2.rank.add", "Allows permission to add ranks to players."),
+    RANK_REMOVE("medievo2.rank.remove", "Allows permission to remove ranks from players."),
+    MEDIEVO("medievo2.medievo", "Plugin node permission"),
+    MEDIEVO_RELOAD("medievo2.reload", "Allows permission to reload the plugin configuration");
 
     private String node;
     private String description;

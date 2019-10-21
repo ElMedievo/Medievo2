@@ -135,4 +135,12 @@ public class Configuration {
     public void setWeather_enabled(boolean weather_enabled) {
         this.weather_enabled = weather_enabled;
     }
+
+    public void save() {
+        Medievo2.getPlugin.saveConfig();
+    }
+
+    public void reload() {
+        Medievo2.getPlugin.reloadConfig();
+    }
 }
