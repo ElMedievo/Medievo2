@@ -14,19 +14,13 @@ import org.elmedievo.medievo2.Medievo2;
 import java.util.List;
 
 public class JoinQuitListener implements Listener {
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGH)
     public void onJoin(PlayerJoinEvent event) {
+        Configuration configuration = Medievo2.getConfiguration;
         Player player = event.getPlayer();
 
         Medievo2.getChannelRegistry.registerPlayer(player);
         Medievo2.getRankDatabase.registerPlayer(player);
-    }
-
-    @EventHandler(priority = EventPriority.HIGH)
-    public void onJoin2(PlayerJoinEvent event) {
-        Configuration configuration = Medievo2.getConfiguration;
-        Player player = event.getPlayer();
-
         Medievo2.getRankDatabase.deliverRanksToPlayer(player);
 
         String formattedJoinMessage = configuration.getJoin_format().replaceAll("%player%", player.getDisplayName());
