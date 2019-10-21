@@ -20,13 +20,14 @@ public class JoinQuitListener implements Listener {
 
         Medievo2.getChannelRegistry.registerPlayer(player);
         Medievo2.getRankDatabase.registerPlayer(player);
-        Medievo2.getRankDatabase.deliverRanksToPlayer(player);
     }
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onJoin2(PlayerJoinEvent event) {
         Configuration configuration = Medievo2.getConfiguration;
         Player player = event.getPlayer();
+
+        Medievo2.getRankDatabase.deliverRanksToPlayer(player);
 
         String formattedJoinMessage = configuration.getJoin_format().replaceAll("%player%", player.getDisplayName());
         String colorFormattedJoinMessage = ChatColor.translateAlternateColorCodes('&', formattedJoinMessage);
