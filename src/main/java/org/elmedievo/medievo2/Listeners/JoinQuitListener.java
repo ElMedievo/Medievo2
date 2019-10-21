@@ -7,6 +7,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.elmedievo.medievo2.Configuration;
 import org.elmedievo.medievo2.Medievo2;
 
@@ -16,33 +17,39 @@ public class JoinQuitListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        Configuration configuration = Medievo2.getConfiguration;
-        String formattedJoinMessage = configuration.getJoin_format().replaceAll("%player%", player.getDisplayName());
-        String colorFormattedJoinMessage = ChatColor.translateAlternateColorCodes('&', formattedJoinMessage);
 
         Medievo2.getChannelRegistry.registerPlayer(player);
         Medievo2.getRankDatabase.registerPlayer(player);
         Medievo2.getRankDatabase.deliverRanksToPlayer(player);
-
-        event.setJoinMessage(colorFormattedJoinMessage);
     }
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onJoin2(PlayerJoinEvent event) {
         Configuration configuration = Medievo2.getConfiguration;
-        List<String> welcomeMessage = configuration.getWelcome_message();
         Player player = event.getPlayer();
 
-        StringBuilder welcomeMessageBuilder = new StringBuilder();
+        String formattedJoinMessage = configuration.getJoin_format().replaceAll("%player%", player.getDisplayName());
+        String colorFormattedJoinMessage = ChatColor.translateAlternateColorCodes('&', formattedJoinMessage);
 
-        welcomeMessage.forEach(line -> {
-            String finalLine = line
-                    .replaceAll("%player%", player.getDisplayName());
-            String coloredFinalLine = ChatColor.translateAlternateColorCodes('&', finalLine);
-            welcomeMessageBuilder.append(coloredFinalLine).append("\n");
-        });
+        event.setJoinMessage(colorFormattedJoinMessage);
 
-        player.sendMessage(welcomeMessageBuilder.toString());
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                List<String> welcomeMessage = configuration.getWelcome_message();
+                StringBuilder welcomeMessageBuilder = new StringBuilder();
+
+                welcomeMessage.forEach(line -> {
+                    String finalLine = line
+                            .replaceAll("%player%", player.getDisplayName());
+                    String coloredFinalLine = ChatColor.translateAlternateColorCodes('&', finalLine);
+                    welcomeMessageBuilder.append(coloredFinalLine).append("\n");
+                });
+
+                player.sendMessage(welcomeMessageBuilder.toString());
+                this.cancel();
+            }
+        }.runTaskTimer(Medievo2.getPlugin, 1L, 0L);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
