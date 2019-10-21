@@ -14,7 +14,6 @@ public class RankDatabaseException extends Exception {
     }
 
     public enum Causes {
-        INVALID_PLAYER("Invalid player"),
         PLAYER_NOT_FOUND("Player not found."),
         RANK_NOT_FOUND("Rank not found."),
         DUPLICATED_RANK("Player already has rank."),
