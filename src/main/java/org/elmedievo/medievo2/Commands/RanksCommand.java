@@ -22,25 +22,6 @@ public class RanksCommand {
         sender.sendMessage(ChatConstant.RANKS_RELOADED.formatAsSuccess());
     }
 
-    @Command(
-            aliases = {"list"},
-            desc = "Lists all existing ranks."
-    )
-    @CommandPermissions("medievo2.ranks.list")
-    public static void list(final CommandContext args, final CommandSender sender) throws CommandException {
-        StringBuilder rankListBuilder = new StringBuilder();
-        String rankListHeader = ChatColor.GRAY + "Server Ranks:" + "\n";
-
-        rankListBuilder.append(rankListHeader);
-        Medievo2.getRankRegistry.getRanks().forEach(rank -> rankListBuilder
-                .append(ChatColor.WHITE).append("» ").append(rank.getFlair()).append(ChatColor.GRAY).append(rank.getName())
-                .append("\n")
-        );
-
-        String rankList = ChatColor.translateAlternateColorCodes('$', rankListBuilder.toString());
-        sender.sendMessage(rankList);
-    }
-
     public static class RanksParentCommand {
         @Command(
                 aliases = {"ranks"},
