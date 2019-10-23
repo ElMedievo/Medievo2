@@ -103,7 +103,7 @@ public class RankDatabase {
         reload();
     }
 
-    public void removePlayeRank(Player player, String rankName) throws RankDatabaseException {
+    public void removePlayerRank(Player player, String rankName) throws RankDatabaseException {
         UUID uuid = player.getUniqueId();
 
         if (!playerIsRegistered(player)) throw new RankDatabaseException(RankDatabaseException.Causes.PLAYER_NOT_FOUND.getFormattedCause());

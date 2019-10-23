@@ -74,7 +74,7 @@ public class RankCommand {
             return;
         }
 
-        Medievo2.getRankDatabase.removePlayeRank(player, rankName);
+        Medievo2.getRankDatabase.removePlayerRank(player, rankName);
 
         sender.sendMessage(ChatColor.RED + ChatConstant.RANK_REMOVED.getMessage() + player.getDisplayName());
         if (player.isOnline()) player.sendMessage(ChatColor.RED + ChatConstant.RANK_TAKEN.getMessage() + senderName);
