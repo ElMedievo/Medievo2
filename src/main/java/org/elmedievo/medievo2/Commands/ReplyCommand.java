@@ -29,8 +29,7 @@ public class ReplyCommand {
             String receiverUUID = Medievo2.getReplyQueue.getPlayerReplier(player);
             if (Medievo2.getReplyQueue.getPlayerReplier(player) != null) {
                 Player receiver = Bukkit.getPlayer(UUID.fromString(receiverUUID));
-                assert receiver != null;
-                if (receiver.isOnline()) {
+                if (receiver != null) {
                     String[] arguments = args.getOriginalArgs();
                     Message.Text text = new Message.Text(buildMessageFromCommandArgs(arguments, 1));
                     PrivateMessage pm = new PrivateMessage(player, receiver.getPlayer(), text);
