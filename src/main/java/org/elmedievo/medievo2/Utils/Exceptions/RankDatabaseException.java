@@ -26,7 +26,7 @@ public class RankDatabaseException extends Exception {
         }
 
         public String getFormattedCause() {
-            return ChatColor.RED + cause;
+            return ChatColor.YELLOW + "⚠ " + ChatColor.RED + cause;
         }
     }
 }

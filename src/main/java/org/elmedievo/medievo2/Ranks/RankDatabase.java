@@ -98,6 +98,7 @@ public class RankDatabase {
         List<String> currentRanks = playerRanks.get(uuid.toString());
         currentRanks.add(rankName);
         ranksYMLConfiguration.set(uuid.toString(), currentRanks);
+
         save();
         reload();
     }

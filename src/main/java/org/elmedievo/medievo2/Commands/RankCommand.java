@@ -36,6 +36,7 @@ public class RankCommand {
 
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
         Player player = offlinePlayer.getPlayer();
+
         if (player == null) {
             sender.sendMessage(ChatConstant.INVALID_PLAYER.formatAsException());
             return;
