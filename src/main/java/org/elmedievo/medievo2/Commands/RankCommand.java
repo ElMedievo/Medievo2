@@ -91,7 +91,7 @@ public class RankCommand {
 
         rankListBuilder.append(rankListHeader);
         Medievo2.getRankRegistry.getRanks().forEach(rank -> rankListBuilder
-                .append(ChatColor.WHITE).append("» ").append(rank.getFlair()).append(ChatColor.GRAY).append(rank.getName())
+                .append(ChatColor.WHITE).append("» ").append(rank.getFlair()).append(" ").append(ChatColor.GRAY).append(rank.getName())
                 .append("\n")
         );
 
