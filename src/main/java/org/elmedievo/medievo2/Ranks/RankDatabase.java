@@ -85,7 +85,13 @@ public class RankDatabase {
 
     public boolean playerHasRank(Player player, String rankName) {
         UUID uuid = player.getUniqueId();
-        return playerRanks.get(uuid.toString()).contains(rankName);
+        AtomicBoolean hasRank = new AtomicBoolean(false);
+
+        playerRanks.get(uuid.toString()).forEach(rank -> {
+            if (rank.equalsIgnoreCase(rankName)) hasRank.set(true);
+        });
+
+        return hasRank.get();
     }
 
     public void addPlayerRank(Player player, String rankName) throws RankDatabaseException {
