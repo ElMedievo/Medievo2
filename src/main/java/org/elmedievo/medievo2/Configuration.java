@@ -138,9 +138,11 @@ public class Configuration {
 
     public void save() {
         Medievo2.getPlugin.saveConfig();
+        reload();
     }
 
     public void reload() {
         Medievo2.getPlugin.reloadConfig();
+        Medievo2.getConfiguration = new Configuration();
     }
 }
