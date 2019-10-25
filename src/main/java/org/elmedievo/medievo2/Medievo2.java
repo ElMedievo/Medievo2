@@ -4,8 +4,12 @@ import com.sk89q.bukkit.util.BukkitCommandsManager;
 import com.sk89q.bukkit.util.CommandsManagerRegistration;
 import com.sk89q.minecraft.util.commands.*;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.inventory.FurnaceRecipe;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.elmedievo.medievo2.Chat.ChannelRegistry;
@@ -61,6 +65,22 @@ public final class Medievo2 extends JavaPlugin {
         return true;
     }
 
+
+    // TODO: Make all of this configurable
+    private void addFurnaceRecipe(String key, Material source, ItemStack result, float experience, int cookingTime) {
+        Bukkit.getServer().addRecipe(new FurnaceRecipe(new NamespacedKey(getPlugin, key), result, source, experience, cookingTime));
+    }
+
+    private void loadFurnaceRecipes() {
+        addFurnaceRecipe(
+                "leather_from_flesh",
+                Material.ROTTEN_FLESH,
+                new ItemStack(Material.LEATHER),
+                0.03f,
+                200
+        );
+    }
+
     @Override
     public void onEnable() {
         getPlugin = this;
@@ -82,6 +102,8 @@ public final class Medievo2 extends JavaPlugin {
 
         registerCommands();
         registerEvents();
+
+        loadFurnaceRecipes();
     }
 
     @Override
