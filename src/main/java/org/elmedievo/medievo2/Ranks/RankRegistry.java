@@ -65,11 +65,14 @@ public class RankRegistry {
 
             List<String> inheritedPermissions = new ArrayList<>();
             if (rankModule.getAttributeValue("parents") != null) {
-                String parent = rankModule.getAttributeValue("parents");
+                String trimmedParents = rankModule.getAttributeValue("parents").replaceAll(" ", "");
+                String[] parents = trimmedParents.split(",");
 
                 root.getChildren().forEach(probableParent -> {
-                    if (probableParent.getAttributeValue("name").equals(parent)) {
-                        probableParent.getChildren().forEach(parentPermissionModule -> inheritedPermissions.add(parentPermissionModule.getText()));
+                    for (String parent : parents) {
+                        if (probableParent.getAttributeValue("name").equalsIgnoreCase(parent)) {
+                            probableParent.getChildren().forEach(parentPermissionModule -> inheritedPermissions.add(parentPermissionModule.getText()));
+                        }
                     }
                 });
 

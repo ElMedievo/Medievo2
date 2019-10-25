@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ranks>
-    <rank name="Default" flair="$e" priority="1000"/>
+    <rank name="Default" flair="$e" priority="1000">
+        <permission>medievo2.chat.global</permission>
+        <permission>medievo2.chat.message</permission>
+        <permission>medievo2.chat.reply</permission>
+        <permission>medievo2.rank.list</permission>
+    </rank>
+    <rank name="Helper" flair="$9❖$e" parent="Default" priority="2000">
+        <permission>medievo2.chat.admin</permission>
+        <permission>medievo2.chat.color</permission>
+        <permission>medievo2.chat.broadcast</permission>
+        <permission>minecraft.command.kick</permission>
+    </rank>
+    <rank name="Administrator" flair="$6❖$e" parent="Default, Helper" priority="3000">
+        <permission>minecraft.command.op</permission>
+    </rank>
 </ranks>
