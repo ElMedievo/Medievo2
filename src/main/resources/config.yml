@@ -16,7 +16,7 @@ chat:
     - "sas"
     - "---"
   coords_format:
-    - "%player%&7:"
+    - "%world% %player%&7:"
     - "&eX&7: &b%x%"
     - "&eY&7: &b%y%"
     - "&eZ&7: &b%z%"
